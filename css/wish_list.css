@@ -1,0 +1,45 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------- TEXT -------------- */
+
+#total{
+	padding: 10px;
+	font-size: 23px;
+	color: #06acf9;
+}
+
+#preview_tile, #description_tile, #quantity_tile, #unit_price_tile, #total_price_tile, #delete_tile{
+	text-align: center;
+}
+
+#data-field{
+	text-align: center;
+}
+
+#table-title{
+	font-size: 25px;
+	font-style: italic
+}
+
+#total{
+	margin-right: 10px;
+	font-size: 27px;
+	text-align: center;
+	color: #6a6a6a;
+	margin-left: 85px;
+}
+
+/* -------------- IMAGES  -------------- */
+
+#preview, #preview-2{
+	height: 150px;
+	width: 125px;
+}
+
+/* -------------- OTHERS -------------- */
+
+.table{
+	text-align: center;
+}
+

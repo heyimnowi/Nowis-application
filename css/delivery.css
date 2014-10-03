@@ -1,0 +1,125 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------- BUTTONS -------------- */
+
+.delivery-button {
+	padding: 5px 10px;
+	margin: 0px 10px 15px;
+	width: 150px;
+	background-color: #444;
+	border-bottom: 5px solid #09F;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FCFCFC;
+	text-align: center;
+}
+
+.delivery-button.active {	
+	background-color: #999;	
+	border-bottom: 5px solid #09f;
+	color: #FFF;
+}
+
+
+#submit-address-button {
+	padding-top: 26px;
+}
+
+#submit-newaddress-button {
+	margin-top: -33px;
+	float: right;
+}
+
+/* -------------- TEXT -------------- */
+
+.title {	
+	margin-bottom: 30px;
+
+	color: #09F;
+	font-size: 18px;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.product-name {
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.instruction {	
+	font-style: italic;
+	font-weight: bold;
+}
+
+#casa, #departamento {
+	display: block;
+	padding: 0px;
+}
+
+#casa {
+	margin-left: 10px;
+}
+
+#departamento {
+	margin-left: 35px;
+}
+
+#piso {
+	margin-top: 0px;
+	padding-top: 30px;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	
+	visibility: hidden;
+}
+
+/* -------------- OTHERS -------------- */
+
+#address, #cart-products {
+	padding: 20px;
+	border: 2px solid #222;
+	border-radius: 20px;
+}
+
+.content {
+	margin-left: 10px;
+}
+
+.select-address {
+	margin-left: 15px;
+}
+
+#new-address-form {
+	border-spacing: 10px;
+	border-collapse: separate;	
+}
+
+#address-separator {
+	margin: 50px 0px 20px;
+}
+
+input[type="number"] {
+	width: 80px;
+}
+
+.radio label, input[type="radio"] {
+	text-align: right;
+	margin-top: 5px;
+}
+
+#cart-products-table {
+	border-spacing: 10px;
+	border-collapse: separate;	
+}
+
+#cart-products-table td {
+	width: 130px;
+	padding: 10px 0 10px;
+}
+
+#cart-products {
+	max-height: 690px;
+	overflow: auto;
+}

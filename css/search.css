@@ -1,0 +1,93 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+/* -------------- BUTTONS -------------- */
+
+.btn-default{
+	border-color: #000000;
+	border-left-width: 0px;
+	border-right-width: 0px;
+	border-bottom-width: 1px;
+	border-top-width: 1px;
+	color: rgba(0,0,0,0.75);
+}
+
+.apply-btn{
+	text-align: right;
+}
+
+button.btn.btn-primary{
+	margin-top: 35px;
+}
+
+/* -------------- TEXT -------------- */
+
+.filter-name{
+	font-weight: bold;
+	margin-top: 20px;
+}
+
+.product-name {
+	color:#000000;
+	text-align:center;
+	font-weight:bold;
+}
+
+.product-price{
+	color:#000000;
+	text-align:center;
+}
+
+/* -------------- FILTERS -------------- */
+
+#filters{
+	width:400px;
+	text-align:center;
+	padding-left:50px;
+	padding-right:50px;
+	padding-top:0px;
+	margin-top:10px;
+}
+
+.filter-separator {
+	border-color: #06C;
+	padding-bottom:10px;
+}
+
+/* -------------- OTHERS -------------- */
+
+.info  a:link{
+	text-align:center; 
+}
+
+.table{
+	border: 2px #A8A8A8 solid
+}
+
+.succes{
+	text-align:center;
+}
+
+.pagination{
+	padding:0px;
+	margin-bottom: 0px;
+}
+
+.pages{
+	padding:0px;
+	text-align:right;
+}
+
+
+input[name="price-min"], input[name="price-max"]{
+	width:80px;
+	display: inline;
+	margin: 0px 4px;
+
+}
+
+.cell{
+	min-width:80px;
+	min-height:80px;
+}

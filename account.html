@@ -1,0 +1,277 @@
+﻿<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NOWI'S</title>
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/account.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="images/fav.ico" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+        <script src="js/javascript.js"></script>
+    </head>
+
+    <body>
+    	<div id="container" class="container">
+            
+       <header class="row">
+                <div class="col-md-2">               	
+                    
+                    <a href="index.html">
+                        <div id="sitename" class="row">Nowi's</div>
+                    </a>
+				
+                    <div id="gender" class="row"></div>                  
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <div class="col-md-6">
+                    <form id="searchcols" class="navbar-form navbar-left" role="search" action="search.html">
+                        <div class="form-group">
+                            <input type="text" id="searchbar" class="form-control" placeholder="Buscar producto..." name="product">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                </div>
+               
+                
+                
+                
+                <div id="icons" class="col-md-3">
+                    <div class="row">
+                    
+                        <a href="wish_list.html"><div class="col-md-3">
+                            <div class="row">
+                            	<span id="wish-list-image" class="glyphicon glyphicon-heart"></span>
+                            </div>
+                            <div class="row icontext">Lista de deseos</div>
+                        </div></a>
+                        
+                        <a href="cart.html"><div class="col-md-3">
+                            <div class="row">
+                            	<span id="cart-image" class="glyphicon glyphicon-shopping-cart"></span>
+                            	<span class="badge">0</span>
+                            </div>
+                        <div class="row icontext">Carrito de compras</div>
+                        </div></a>
+                        
+                        <div class="col-md-3">
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-user"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="account.html">Mi cuenta</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="under_construction.html">Pedidos</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html?logout=yes">Salir</a></li>
+								</ul>
+							</div>
+                        </div>
+                    </div>
+	            </div>     
+           </header>
+           
+            
+			
+            <ol class="breadcrumb no-margin no-padding">
+				<li><a href="index.html">Página principal</a></li>
+				<li class="active">Usuario</li>
+			</ol>
+            
+            <hr>
+
+			<div id="site-content">
+            <!-- ACÁ EMPIEZA EL CONTENIDO -->
+			<div class="row2">
+			
+				<div class="col-md-4 left-col">
+					<div class="title"> Datos</div>
+			
+							<div class="row">
+								
+								<div id="user-name" >JC-robles90</div>
+	
+								<button type="button" class="btn btn-default" id="edit-btn">
+									<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Editar
+								</button>
+	
+								
+							</div>
+							<form role="form">
+								<div class="form-group">
+								
+								
+									<div class="category">
+										<label >Nombre
+											<input name="name" class="form-control" id="name" placeholder="Juan Carlos Robles" disabled>								
+										</label>
+										
+										<button id="pwd-btn" class="btn btn-default action-button">Cambiar contraseña</button>
+										
+									</div>
+									
+									<div class="category">
+										<label >E-mail
+										<input name="email" class="form-control" id="email" placeholder="carlitos@losarboles.com" disabled>
+										</label>
+	
+									</div>
+									
+									<div class="category">
+										<label >Fecha de nacimiento
+										<input name="birth-date" class="form-control" id="birth-date" placeholder="01/01/1990" disabled>
+										</label>
+										
+										<button id="save-btn" type="button" class="btn btn-success apply" onclick="save_edit()">
+											<span class="glyphicon glyphicon-ok"></span>
+										</button>
+										<button id="cancel-btn" type="button" class="btn btn-danger apply" onclick="cancel_edit()" >
+											<span class="glyphicon glyphicon-remove"></span>
+										</button>
+									
+									</div>
+									
+                                    <hr>
+                                    
+									<div class="category">
+										<label >Fecha de creación</label>
+										<address id="creation-date" >01/01/1990</address>
+									</div>
+									
+									<div class="category">
+										<label >Último acceso</label>
+										<address id="last-access-date" >01/01/1990</address>
+									</div>
+									
+								</div>
+							</form>						
+				
+				</div>
+									
+				<div  class="col-md-4 center-col">
+					<div class="title"> Direcciones de envío </div>
+					<div class="table-list">
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="images/direccion.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td>
+                                    <strong>Nombre:</strong> ITBA <br>
+                                    <strong>Dirección:</strong> Madero 333, Cap.Fed, Buenos Aires
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/direccion.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td>
+                                    <strong>Nombre:</strong> Casa central <br>
+                                    <strong>Dirección:</strong> Pedro Goyena 1673, Castelar, Buenos Aires
+                                    <hr>
+                                </td>
+                            </tr>                            
+                        </table>
+                    </div>
+					<button type="button" class="btn btn-default action-button">
+						<span class="glyphicon glyphicon-plus"></span> Agregar dirección de envío
+					</button>	
+						
+			
+				</div>
+				
+				<div  class="col-md-4 right-col">
+					<div class="title"> Tarjetas de crédito</div>
+					<div class="table-list">		
+                        <table>
+                            <tr>
+                                <td>
+                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td class="card">
+                                    <strong>Nombre:</strong> VISA - HSBC <br>
+                                    <strong>Número:</strong> 8000 **** **** 1764
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td class="card">
+                                    <strong>Nombre:</strong> MasterCard - Galicia <br>
+                                    <strong>Dirección:</strong> 8001 **** **** 2345
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td class="card">
+                                    <strong>Nombre:</strong> Amex - HSBC <br>
+                                    <strong>Dirección:</strong> 8000 **** **** 1145
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td class="card">
+                                    <strong>Nombre:</strong> Amex - HSBC <br>
+                                    <strong>Dirección:</strong> 8000 **** **** 1145
+                                    <hr>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
+                                </td>
+                                <td class="card">
+                                    <strong>Nombre:</strong> Amex - HSBC <br>
+                                    <strong>Dirección:</strong> 8000 **** **** 1145
+                                    <hr>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>		
+					<button type="button" class="btn btn-default action-button">
+						<span class="glyphicon glyphicon-plus"></span> Agregar tarjeta de crédito
+					</button>
+							
+				</div>
+				
+					
+			</div>			
+			
+				
+			
+            <!-- ACÁ TERMINA EL CONTENIDO -->
+            </div>
+
+            <footer class="row">
+                <div id="tools" class="col-md-2"> 
+                    <a href="contact.html" >Contacto</a>
+                    <br /><a href="under_construction.html">Política de privacidad</a>
+                </div>
+                <div id="suscribe" class="col-md-10">
+                    <div id="suscribe_text" class="row">
+                        ¡Suscribite a nuestras promociones!
+                    </div>
+                    <div class="row">
+                        <form class="navbar-form navbar-left" role="search" action="under_construction.html">
+                            <div class="form-group">
+                                <input type="text" id="suscribebar" class="form-control" placeholder="Ingresa tu e-mail..." name="suscribe">
+                            </div>
+                            <button type="submit" class="btn btn-default">Enviar</button>
+                        </form>
+                    </div>
+               </div>   
+            </footer>
+		</div>
+	</body>
+</html>

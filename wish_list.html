@@ -1,0 +1,220 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>NOWI'S</title>
+        <link href="css/bootstrap.css" rel="stylesheet" />
+        <link href="css/style.css" rel="stylesheet" />
+        <link href="css/wish_list.css" rel="stylesheet" />
+        <link rel="shortcut icon" href="images/fav.ico" />
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/bootstrap.js"></script>
+    </head>
+
+    <body>
+    	<div id="container" class="container">
+
+           <header id="header" class="row">
+                <div class="col-md-2">               	
+                    <a href="index.html">
+                    <div id="sitename" class="row">Nowi's
+                    </div></a>
+				
+                    <div id="gender" class="row"></div>                  
+                </div>
+                
+                <div class="col-md-1"></div>
+                
+                <div class="col-md-6">
+                    <form id="searchcols" class="navbar-form navbar-left" role="search" action="search.html">
+                        <div class="form-group">
+                            <input type="text" id="searchbar" class="form-control" placeholder="Buscar producto..." name="product">
+                        </div>
+                        <button type="submit" class="btn btn-default">Buscar</button>
+                    </form>
+                </div>
+               
+                
+                
+                
+                <div id="icons" class="col-md-3">
+                    <div class="row">
+                    
+                        <a href="wish_list.html"><div class="col-md-3">
+                            <div class="row">
+                            	<span id="wish-list-image" class="glyphicon glyphicon-heart"></span>
+                            </div>
+                            <div class="row icontext">Lista de deseos</div>
+                        </div></a>
+                        
+                        <a href="cart.html"><div class="col-md-3">
+                            <div class="row">
+                            	<span id="cart-image" class="glyphicon glyphicon-shopping-cart"></span>
+                            	<span class="badge">3</span>
+                            </div>
+                        <div class="row icontext">Carrito de Compras</div>
+                        </div></a>
+                        
+                        <div class="col-md-3">
+							<div class="dropdown">
+								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-user"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="account.html">Mi cuenta</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="under_construction.html">Pedidos</a></li>
+								    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html?logout=yes">Salir</a></li>
+								</ul>
+							</div>
+                        </div>
+                    </div>
+	            </div>     
+           </header>
+		            
+            <ol class="breadcrumb no-margin no-padding">
+                <li><a href="index.html">Página principal</a></li>
+                <li class="active">Lista de deseos</li>
+            </ol>
+
+            <!-- ACÁ EMPIEZA EL CONTENIDO -->
+
+            <div id="site-content">
+
+                <div class="row">
+                        <div class="col-md-6"></div>
+                        <div class="col-md-3">
+                            <button type="submit" class="col-md-12 btn btn-default action-button">VACIAR LA LISTA</button>
+                        </div>
+                        <div class="col-md-3">
+                            <button type="submit" class="col-md-12 btn btn-default action-button">SEGUIR BUSCANDO</button>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="panel panel-default">
+                          <!-- Default panel contents -->
+                          <div id="table-title" class="panel-heading">Lista de deseos</div>
+                          <!-- Table -->
+                              <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th id="preview_tile" data-field="preview">Vista previa</th>
+                                        <th id="description_tile" data-field="description">Descripción</th>
+                                        <th id="quantity_tile" data-field="quantity">Cantidad</th>
+                                        <th id="unit_price_tile" data-field="unit-price">Precio unitario</th>
+                                        <th id="total_price_tile" data-field="total-price">Precio total</th>
+                                        <th id="delete_tile" data-field="delete">Eliminar</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <a href="product.html">
+                                            <img id="preview" src="images/shirt.jpg" alt="Preview"> 
+                                            </a>
+                                        </td>
+                                        <td>Camisa Azul<br> Talle: L
+                                            <br> 
+                                            <div class="btn btn-default btn-lg table-button">
+                                                <a href="under_construction.html" ></a>
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Mover al carrito de compra
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="btn btn-default">
+                                            	<a href="under_construction.html" ></a>
+                                                <span class="glyphicon glyphicon-minus"></span>
+                                            </div>
+                                            <label>1</label>
+                                            <button type="button" class="btn btn-default">
+                                                 <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                            <br> 
+                                        </td>
+                                        <td>$60</td>
+                                        <td>$60</td>
+                                        <td>
+                                        	<button type="button" class="btn btn-default">
+                                                 <span class="glyphicon glyphicon-trash"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <a href="product.html">
+                                            <img id="preview-2" src="images/shirt_2.jpg" alt="preview"> 
+                                            </a>
+                                        </td>
+                                        <td>Camisa Eco<br> Talle: L
+                                            <br> 
+                                            <div class="btn btn-default btn-lg table-button">
+                                                <a href="under_construction.html" ></a>
+                                                <span class="glyphicon glyphicon-shopping-cart"></span> Mover al carrito de compra
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button type="button" class="btn btn-default">
+                                                 <span class="glyphicon glyphicon-minus"></span>
+                                            </button>
+                                            <label>2</label>
+                                            <button type="button" class="btn btn-default">
+                                                 <span class="glyphicon glyphicon-plus"></span>
+                                            </button>
+                                            <br> 
+                                        </td>
+                                        <td>$50</td>
+                                        <td>$100</td>
+                                        <td>
+                                        	<button type="button" class="btn btn-default">
+                                                 <span class="glyphicon glyphicon-trash"></span>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>    
+                            </table>
+                    </div>
+                </div>   
+
+				<div class="row">
+					<div class="col-md-9"></div>
+					<div class="col-md-3">
+						<label id=total>Total: $160</label>
+					</div>
+				</div>
+					
+
+                 <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                        	<a href="cart.html">
+                            <div class="col-md-12 btn btn-default action-button">MOVER TODO AL CARRITO</div>
+                        	</a>
+                        </div>
+                </div>
+                 
+            </div>
+
+            <!-- ACÁ TERMINA EL CONTENIDO -->
+            
+            <footer class="row">
+                <div id="tools" class="col-md-2"> 
+                    <a href="contact.html" >Contacto</a>
+                    <br /><a href="under_construction.html">Política de privacidad</a>
+                </div>
+                <div id="suscribe" class="col-md-10">
+                    <div id="suscribe_text" class="row">
+                        ¡Suscribite a nuestras promociones!
+                    </div>
+                    <div class="row">
+                        <form class="navbar-form navbar-left" role="search" action="under_construction.html">
+                            <div class="form-group">
+                                <input type="text" id="suscribebar" class="form-control" placeholder="Ingresa tu e-mail..." name="suscribe">
+                            </div>
+                            <button type="submit" class="btn btn-default">Enviar</button>
+                        </form>
+                    </div>
+               </div>   
+            </footer>
+        </div>
+    </body>
+</html>

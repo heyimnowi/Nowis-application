@@ -1,0 +1,250 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------- HEADER AND FOOTER -------------- */
+
+header {
+	height: 100px;
+}
+
+header, footer {
+	background-color: #333;
+	color: #FFF;
+	font-family: Tahoma, Geneva, sans-serif;	
+	font-weight: bold;
+}
+
+footer {
+	height: 90px;
+	padding-top: 10px;
+	margin-top: 15px;
+}
+
+
+/* -------------- BREADCRUMB -------------- */
+
+#container, .breadcrumb {
+	margin: 0px;
+	width: 100%;
+	background-color: #fCfCfC;
+}
+.breadcrumb {
+  padding: 0px;
+  padding-top: 15px;
+  margin: 15px 0px 10px;
+  
+  list-style: none;
+  background-color: #fCfCfC;
+  border-radius: 0px;
+}
+
+.breadcrumb > li {
+	padding-top: 15px;
+  	display: inline-block;
+}
+
+.breadcrumb > li + li:before {
+  padding: 0 5px;
+  
+  color: #555;
+  content: "/\00a0";
+  font-weight: bold;
+}
+
+.breadcrumb > .active {
+  color: #555;
+  font-weight: bold;
+}
+
+.breadcrumb a:link, 
+.breadcrumb a:active, 
+.breadcrumb a:visited {
+	color: #06C;
+}
+
+.breadcrumb a:hover {
+	color: #09C;
+}
+
+/* -------------- BUTTONS -------------- */
+
+.table-button{
+	font-size: 11px;
+	color: #000;
+}
+
+.action-button{
+	height: 50px;
+	font-size: 18px;
+	margin-bottom: 20px;
+	margin-top: 10px;
+	color: #fff;
+	background-color:#06C;
+	font-weight: bold;
+	border-radius: 15px;
+	border-color: #ffffff; 
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* -------------- TEXT -------------- */
+
+#sitename{
+	display: inline-block;
+    transform:scale(3,2); /* W3C */
+    -webkit-transform:scale(3,2); /* Safari and Chrome */
+    -moz-transform:scale(3,2); /* Firefox */
+    -ms-transform:scale(3,2); /* IE 9 */
+    -o-transform:scale(3,2); /* Opera */
+    color: #09F;
+    margin-left: 90px;
+    margin-top: 30px;
+    font-size: 20px;
+}
+
+#suscribe_text {
+	padding-left: 15px;
+}
+
+content {	
+	font-family: Tahoma, Geneva, sans-serif;	
+	font-weight: bold;
+	font-size: 12px;
+}
+
+/* -------------- GENDER -------------- */
+
+#gender {
+	margin-top: -5px;
+	margin-left: 50px;
+	font-size: 18px;
+	font-style: italic;
+}
+
+#gender-navbar {
+  background-color: #E6E6E6;
+}
+
+#gender-navbar .navbar-nav > li > a {
+	font-family: Tahoma, Geneva, sans-serif;
+	font-size: 14px;
+	font-weight: bolder;
+	line-height: 40%;
+	color: #EEE;
+	background-color: #E6E6E6;
+	color: #555;
+}
+
+#gender-navbar .navbar-nav > li > a:hover,
+#gender-navbar .navbar-nav > li > a:focus,
+#gender-navbar .navbar-nav > .active > a,
+#gender-navbar .navbar-nav > .active > a:hover,
+#gender-navbar .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: #BBB;
+}
+
+/* -------------- BAR -------------- */
+
+
+#searchbar{
+	width: 400px;
+	font-weight: 100;
+}
+
+#suscribebar{
+	width: 325px;
+	font-weight: 100;
+}
+
+#searchcols {
+	padding-top: 20px;
+}
+
+#cat-navbar .btn {
+	border-radius: 0px;
+}
+
+
+/* -------------- ICONS -------------- */
+
+#icons {
+	text-align: center;
+	padding: 12px 0px 0px 80px;
+}
+
+#icons a:link, a:active, a:visited {
+	color: #000;		
+}
+
+#logo a:link, a:active, a:visited {
+	color: rgba(22,126,238,1);		
+	text-decoration: none;		
+}
+
+#tools a:link, a:active, a:visited {
+	color: #FFF;
+	text-decoration: none;		
+}
+
+#icons,#tools a:hover {
+	color: #CCC;
+}
+
+
+.icontext {
+	padding-top: 7px;
+	font-size: 11px;
+}
+
+#wish-list-image {
+	font-size: 25px;
+}
+
+#cart-image {
+	font-size: 25px;
+}
+
+/* -------------- OTHERS -------------- */
+
+
+#tools {
+	padding-left: 35px;
+	padding-top: 20px;
+}
+
+#suscribe {	
+	padding-left: 600px; 
+}
+
+.no-padding {
+	padding: 0px;
+}
+
+.no-margin {
+	margin: 0px;
+}
+
+.no-border {
+	border: none;
+}
+
+hr {
+	height: 5px;
+	border-top: 1px solid #BBB;
+	margin: 5px 0px 10px;
+}
+
+#site-content {
+	min-height: 450px;
+}
+
+#construction {
+	margin: auto;
+	font-size: 30px;
+	text-align: center;
+}
+
+
+
+	
