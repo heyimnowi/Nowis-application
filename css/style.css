@@ -298,7 +298,7 @@ hr {
 	margin-top: 3px;	
 }
 
-#success-popup, #alert-popup, #error-popup {
+#success-popup, #alert-popup, #error-popup, #noscript-popup {
 
     font-size: 21px;
     text-align: center;
@@ -311,7 +311,8 @@ hr {
     left: 0;
     right: 0;
 	width: 700px;
-	height: 40px;
+	height: 100px;
+	z-index: 500;
 
     margin: auto;
 	margin-top: 80px;
@@ -321,6 +322,11 @@ hr {
 	padding-left: 20px;
 	
 	visibility: hidden;
+}
+
+#noscript-popup {
+	
+	visibility: visible;
 }
 
 .popup-text  {
