@@ -1,0 +1,120 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------- BUTTONS -------------- */
+
+.delivery-button {
+	padding: 5px 10px;
+	margin: 0px 10px 15px;
+	width: 150px;
+	background-color: #444;
+	border-bottom: 5px solid #09F;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FCFCFC;
+	text-align: center;
+}
+
+.delivery-button.active {	
+	background-color: #999;	
+	border-bottom: 5px solid #09f;
+	color: #FFF;
+}
+
+#confirm-buttons {
+	float: right;
+	margin-top: -80px;
+}
+
+/* -------------- TEXT -------------- */
+
+.title {	
+	margin-bottom: 30px;
+
+	color: #09F;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.mini-title {
+	margin: 15px 0px 8px;
+
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.product-name {
+	font-weight: bold;
+}
+
+.instruction {	
+	font-style: italic;
+	font-weight: bold;
+}
+
+/* -------------- OTHERS -------------- */
+
+#delivery, #payment, #cart-products {
+	padding: 20px;
+	min-height: 500px;
+}
+
+.content {
+	margin-left: 10px;
+}
+
+#cart-products-table {
+	max-height: 350px;
+	overflow: auto;
+	display: block;
+	border-spacing: 10px;
+	border-collapse: separate;	
+}
+
+#cart-products-table td {
+	width: 130px;
+	padding: 10px 0 10px;
+}
+
+#payment, #cart-products {
+	border-left: 2px solid #222;
+	padding-left: 80px;
+}
+
+#total-price {
+	font-size: 20px;
+	color: #09c;
+	font-weight: bold;
+}
+
+#confirm-buttons {
+	padding-top: 30px;
+}
+
+#credit-card, #coutas {
+	margin-top: 30px;
+	visibility: hidden;
+}
+
+#final-price, #comment-final-price, #cuotas {
+	padding-top: 10px;
+	padding-left: 50px;
+}
+
+#cuotas {
+	padding-top: 60px;
+	padding-bottom: 30px;
+}
+
+#cuotas > .mini-title {
+	font-size: 16px;
+	color: #06c;	
+}
+
+#final-price {
+	color: #222;
+	font-size: 26px;
+	font-weight: bold;
+}

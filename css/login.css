@@ -1,0 +1,68 @@
+/*---- login ----*/
+
+#register, #access{
+
+	font-family:Tahoma, Geneva, sans-serif;
+	text-align:center;
+}
+
+#register {
+	border-right: 2px solid #222;
+	margin-right: -50px;
+	padding-right: 80px;	
+}
+
+#register-table, #login-table {
+	border-spacing: 30px;
+	border-collapse: separate;
+	
+	margin: auto;	
+}
+
+#register-table {
+	
+	padding-left: 50px;
+}
+
+#login-table {
+	
+	padding-left: 40px;
+}
+
+.title {
+	padding-left: 5px;
+	padding-bottom: 3px;
+}
+
+td {
+	text-align: left;
+	vertical-align: top;
+	width: 200px;
+}
+
+.lonely-col {
+	text-align: left;	
+}
+
+.gender-col {
+	padding-left: 20px;	
+}
+
+.button-col {
+	text-align: center;	
+}
+
+input[type="date"] {
+	width: 167px;
+}
+
+input{
+	border-radius: 5px;
+}
+
+.reg-log{
+	font-size:24px;
+	font-weight:bold;
+	
+	color: #09c;
+}

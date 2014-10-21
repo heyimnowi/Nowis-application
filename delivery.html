@@ -9,12 +9,12 @@
         <link href="css/delivery.css" rel="stylesheet" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/javascript.js"></script>
+        <script src="js/delivery.js"></script>
     </head>
 
     <body>
     	<div id="container" class="container">
-                             <header class="row">
+			<header class="row">
                 <div class="col-md-2">                  
                     <a href="index.html">
                     <div id="sitename" class="row">Nowi's
@@ -22,7 +22,6 @@
                 
                     <div id="gender" class="row"></div>                  
                 </div>
-                
                 <div class="col-md-1"></div>
                 
                 <div class="col-md-6">
@@ -93,31 +92,29 @@
                     
 						<p class="title">Direcciones de envío existentes</p>
                             <div class="content">
-                            	<form action="under_construction.html">
+                            	<form>
                             	<div class="row">                          		
                                 		<div class="col-md-7">                             	
-                                            <p class="instruction">Seleccione una dirección de envío:</p>
-                                            <select class="select-address" name="address">
+                                            <p class="instruction">Seleccione una dirección de envío</p>
+                                            <select class="select-address" name="address" id="existing-addresses">
                                                 <option value="none">Seleccionar...</option>
-                                                <option value="address1">Madero 524, Capital Federal</option>
-                                                <option value="address2">San Isidro Labrador 454, Martínez</option>	
                                             </select>
                                         </div>
                             	</div>
                                 <div class="row">
                                 	<div id="submit-address-button" class="col-md-5">
-                                        <button type="submit" class="btn btn-default btn-lg action-button">Seleccionar dirección de envío</button>
+                                        <div id="select-existing-address" class="btn btn-default btn-lg btn-success action-button">Seleccionar dirección de envío</div>
 									</div>
                                 </div>
                                 </form>
                                                    
                         <hr id="address-separator">
                         
-                            <p class="title">Crear nueva dirección de envío</p>
-                            <form action="under_construction.html">
+                            <p class="title">Agregar nueva dirección de envío</p>
+                            <form action="under_construction.html" >
                                 <table id="new-address-form">
                                     <tr>
-                                        <td colspan="2">Nombre</td>
+                                        <td colspan="2">*Nombre</td>
                                     </tr>
                                     <tr>
                                         <td colspan="2">
@@ -125,15 +122,15 @@
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Calle</td>
-                                        <td>Número</td>
+                                        <td>*Calle</td>
+                                        <td>*Número</td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <input type="text" name="calle" />
                                         </td>
                                         <td>
-                                            <input type="number" name="numero"/>
+                                            <input class="num" type="text" name="numero"/>
                                         </td>
                                     </tr>
                                     <tr>
@@ -152,32 +149,34 @@
                                         <td>
                                             <div id="piso">
                                             Piso
-                                            <br /><input type="number" name="piso" />
+                                            <br /><input class="num" type="text" name="piso" />
                                             </div>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td>Ciudad</td>
-                                        <td>Código postal</td>   
+                                        <td id="city-tag">*Ciudad</td>
+                                        <td>*Código postal</td>   
                                     </tr>
                                     <tr>
                                         <td>
                                             <input type="text" name="ciudad" />
                                         </td>
                                         <td>
-                                            <input type="number" name="codigo_postal"/>
+                                            <input class="num" type="text" name="codigo-postal"/>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Provincia</td>	
+                                        <td colspan="2">*Provincia</td>	
                                     </tr>
                                     <tr>
                                         <td colspan="2">
-                                            <input type="text" name="provincia"/>
+                                            <select name="provincia">
+                                                <option value="none">Seleccionar...</option>
+                                            </select>
                                         </td>
                                     </tr>
                                     <tr>
-                                        <td colspan="2">Teléfono</td>	
+                                        <td colspan="2">*Teléfono</td>	
                                     </tr>
                                     <tr>
                                         <td colspan="2">
@@ -187,8 +186,9 @@
                                 </table>
                				<div class="row">
                             	 <div id="submit-newaddress-button">
-                                	<button type="submit" class="btn btn-default action-button">Agregar y seleccionar dirección de envío</button>
+                                	<div id="create-address" class="btn btn-default btn-success action-button">Agregar y seleccionar dirección de envío</div>
                                 </div>
+                                <div>* Los campos son obligatorios.</div>
                             </div>	
                             </form>
 						</div>
@@ -199,30 +199,11 @@
                 	<div id="cart-products">
                     	<p class="title">Carrito de compras</p>
                         <div class="content">
-                        	<table id="cart-products-table">
-                            	<tr>
-                                	<td><img src="images/shirt.jpg" alt="Camisa blanca" width="100" height="125" /></td>
-                                    <td>
-                                    	<p class="product-name">Camisa Azul</p>
-                                        <p>
-                                        Talle: L
-                                        <br />Precio: $60,00
-                                        <br />Cantidad: 1
-                                        </p>
-                                    </td>
-                                </tr>
-                                <tr>
-                                	<td><img src="images/shirt_2.jpg" alt="Cardigan básico" width="100" height="125" /></td>
-                                    <td>
-                                    	<p class="product-name">Camisa Eco</p>
-                                        <p>
-                                        Talle: L
-                                        <br />Precio: $50,00
-                                        <br />Cantidad: 2
-                                        </p>
-                                    </td>
-                                </tr>
+                        	<table id="cart-products-table">	
                             </table>
+                            <div id="total-price">
+                            	<hr>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -234,7 +215,6 @@
             <footer class="row">
                 <div id="tools" class="col-md-2"> 
                     <a href="contact.html" >Contacto</a>
-                    <br /><a href="under_construction.html">Política de privacidad</a>
                 </div>
                 <div id="suscribe" class="col-md-10">
                     <div id="suscribe_text" class="row">

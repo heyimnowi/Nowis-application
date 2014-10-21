@@ -9,6 +9,7 @@
         <link rel="shortcut icon" href="images/fav.ico" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
+        <script src="js/javascript.js"></script>
     </head>
 
     <body>
@@ -30,7 +31,14 @@
                         <div class="form-group">
                             <input type="text" id="searchbar" class="form-control" placeholder="Buscar producto..." name="product">
                         </div>
-                        <button type="submit" class="btn btn-default">Buscar</button>
+                        <button id="search-btn" type="submit" class="btn btn-default">Buscar</button>
+                    	<br>
+                        <div id="search-genders">
+                        	<div class="input-div"><input type="radio" name="gender" value="Masculino"> Hombre</input></div>
+                            <div class="input-div"><input type="radio" name="gender" value="Femenino"> Mujer</input></div>
+                            <div class="input-div"><input type="radio" name="gender" value="Ninios"> Niños</input></div>
+                            <div class="input-div"><input type="radio" name="gender" value="Ninias"> Niñas</input></div>
+                        </div>
                     </form>
                 </div>
                
@@ -40,27 +48,32 @@
                 <div id="icons" class="col-md-3">
                     <div class="row">
                     
-                        <a href="wish_list.html"><div class="col-md-3">
+                        <div class="col-md-3" id="wishlist-btn">
                             <div class="row">
                             	<span id="wish-list-image" class="glyphicon glyphicon-heart"></span>
                             </div>
                             <div class="row icontext">Lista de deseos</div>
-                        </div></a>
+                        </div>
                         
-                        <a href="cart.html"><div class="col-md-3">
+                        <div class="col-md-3" id="cart-btn">
                             <div class="row">
                             	<span id="cart-image" class="glyphicon glyphicon-shopping-cart"></span>
                             	<span class="badge">0</span>
                             </div>
-                        <div class="row icontext">Carrito de compras</div>
-                        </div></a>
+                            <div class="row icontext">Carrito de compras</div>
+                        </div>
                         
-                        <div class="col-md-3">
-							<div >
-								<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
-									<span class="glyphicon glyphicon-user"></span>
-								</button>
-							</div>
+                        <div class="col-md-3" id="user-btn">
+							 <div class="dropdown">
+                                <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
+                                    <span class="glyphicon glyphicon-user"></span>
+                                </button>
+                                <ul id="user-dropdown" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="account.html">Mi cuenta</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="under_construction.html">Pedidos</a></li>
+                                    <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html?logout=yes">Salir</a></li>
+				   				</ul>
+			    			</div>
                         </div>
                     </div>
 	            </div>     
@@ -75,18 +88,23 @@
                     <div class="col-md-10">
                         <div class="btn-group btn-group-justified">
                              <div class="btn-group">
-                                <a href="search.html?gender=hombre">
+                                <a href="search.html?gender=Masculino&amp;edad=Adulto&amp;page=1">
                                     <div id="men_button" class="btn btn-default button-group">HOMBRE</div>
                                 </a>
                              </div>
                              <div class="btn-group">
-                                <a href="search.html?gender=mujer">
+                                <a href="search.html?gender=Femenino&amp;edad=Adulto&amp;page=1">
                                     <div id="women_button" class="btn btn-default button-group">MUJER</div>
                                 </a>
                             </div>
                             <div class="btn-group">
-                                <a href="search.html?gender=infantil">
-                                    <div id="kids_button" class="btn btn-default button-group">INFANTIL</div>
+                                <a href="search.html?gender=Masculino&amp;edad=Bebe&amp;page=1">
+                                    <div id="boys_button" class="btn btn-default button-group">NIÑOS</div>
+                                </a>
+                            </div>
+                            <div class="btn-group">
+                                <a href="search.html?gender=Femenino&amp;edad=Bebe&amp;page=1">
+                                    <div id="girls_button" class="btn btn-default button-group">NIÑAS</div>
                                 </a>
                             </div>
                         </div>
@@ -96,6 +114,17 @@
 
 
                 </div>
+
+
+                <div class="row"> 
+                    <div class="col-md-1"></div> 
+                    <div class="col-md-5 title">Nuevo
+                    </div> 
+                    <div class="col-md-5 title">Promociones
+                    </div>    
+                    <div class="col-md-1"></div>
+                </div>   
+
 
                 <div class="row"> 
                 
@@ -141,10 +170,10 @@
 
                             <!-- Controls -->
                             <a class="left carousel-control" href="#slider-new" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="glyphicon glyphicon-chevron-left carrousel_button"></span>
                             </a>
                             <a class="right carousel-control" href="#slider-new" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="glyphicon glyphicon-chevron-right carrousel_button"></span>
                             </a>
                 		</div>            
 					</div>
@@ -176,10 +205,10 @@
 
                             <!-- Controls -->
                             <a class="left carousel-control" href="#slider-promotions" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left"></span>
+                                <span class="glyphicon glyphicon-chevron-left carrousel_button"></span>
                             </a>
                             <a class="right carousel-control" href="#slider-promotions" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right"></span>
+                                <span class="glyphicon glyphicon-chevron-right carrousel_button"></span>
                             </a>
                         </div>  
                     </div>
@@ -192,18 +221,17 @@
             <footer class="row">
                 <div id="tools" class="col-md-2"> 
                     <a href="contact.html" >Contacto</a>
-                    <br /><a href="under_construction.html">Política de privacidad</a>
                 </div>
                 <div id="suscribe" class="col-md-10">
                     <div id="suscribe_text" class="row">
                         ¡Suscribite a nuestras promociones!
                     </div>
                     <div class="row">
-                        <form class="navbar-form navbar-left" role="search" action="under_construction.html">
+                        <form class="navbar-form navbar-left v" role="search">
                             <div class="form-group">
                                 <input type="text" id="suscribebar" class="form-control" placeholder="Ingresa tu e-mail..." name="suscribe">
                             </div>
-                            <button type="submit" class="btn btn-default">Enviar</button>
+                            <div id="suscribe-btn" class="btn btn-default">Enviar</div>
                         </form>
                     </div>
                </div>   

@@ -1,0 +1,154 @@
+@charset "utf-8";
+/* CSS Document */
+
+/* -------------- BUTTONS -------------- */
+
+.delivery-button {
+	padding: 5px 10px;
+	margin: 0px 10px 15px;
+	width: 150px;
+	background-color: #444;
+	border-bottom: 5px solid #09F;
+	font-family: "Arial Black", Gadget, sans-serif;
+	font-size: 16px;
+	font-weight: bold;
+	color: #FCFCFC;
+	text-align: center;
+}
+
+.delivery-button.active {	
+	background-color: #999;	
+	border-bottom: 5px solid #09f;
+	color: #FFF;
+}
+
+
+#submit-card-button {
+	padding-top: 26px;
+	float: right;
+	margin-right: 10px;
+}
+
+#submit-newcard-button {
+	float: right;
+}
+
+#cash {
+	margin-top: 30px;
+	display: none;
+	padding-left: 590px;
+}
+
+/* -------------- TEXT -------------- */
+
+.title {	
+	margin-bottom: 30px;
+
+	color: #09F;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.product-name {
+	font-weight: bold;
+}
+
+.instruction {	
+	font-style: italic;
+	font-weight: bold;
+}
+
+#efectivo, #tarjeta-credito {
+	display: block;
+	padding: 0px;
+}
+
+#efectivo {
+	margin-left: 20px;
+}
+
+#tarjeta-credito {
+	margin-left: 45px;
+}
+
+#visa {
+	margin-left: -30px;
+}
+
+#american {
+	margin-left: -25px;
+}
+
+#diners {
+	margin-left: -40px;
+}
+
+#mastercard {
+	margin-left: -30px;
+}
+
+/* -------------- OTHERS -------------- */
+
+#payment, #cart-products {
+	padding: 20px;
+	min-height: 200px;
+}
+
+.content {
+	margin-left: 10px;
+}
+
+.select-card {
+	margin-left: 15px;
+}
+
+#new-card-form {
+	border-spacing: 10px;
+	border-collapse: separate;	
+}
+
+.title-separator {
+	margin: 20px 0px;
+}
+
+.short {
+	width: 70px;
+}
+
+.radio label, input[type="radio"] {
+	text-align: right;
+	margin-top: 5px;
+}
+
+#cart-products-table {
+	max-height: 900px;
+	overflow: auto;
+	display: block;
+	border-spacing: 10px;
+	border-collapse: separate;	
+}
+
+#cart-products-table td {
+	width: 130px;
+	padding: 10px 0 10px;
+}
+
+#cart-products {	
+	border-left: 2px solid #222;
+	padding-left: 80px;
+}
+
+#total-price {
+	font-size: 20px;
+	color: #09c;
+	font-weight: bold;
+}
+
+#credit-card {
+	margin-top: 30px;
+	display: none;
+}
+
+td {
+	vertical-align: top;
+}

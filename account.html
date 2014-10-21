@@ -1,15 +1,17 @@
-﻿<!doctype html>
+﻿
 <html>
     <head>
         <meta charset="utf-8">
         <title>NOWI'S</title>
         <link href="css/bootstrap.css" rel="stylesheet" />
         <link href="css/style.css" rel="stylesheet" />
-        <link href="css/account.css" rel="stylesheet" />
         <link rel="shortcut icon" href="images/fav.ico" />
+        <link href="css/account.css" rel="stylesheet" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/javascript.js"></script>
+        <script src="js/account.js"></script>
+    </head>
+		
     </head>
 
     <body>
@@ -91,58 +93,87 @@
 			
 							<div class="row">
 								
-								<div id="user-name" >JC-robles90</div>
+								<div id="user-name" ></div>
 	
-								<button type="button" class="btn btn-default" id="edit-btn">
-									<span class="glyphicon glyphicon-pencil"></span>&nbsp;&nbsp;Editar
+								<button type="button" class="btn btn-default btn-warning " id="edit-btn">
+									<span class="glyphicon glyphicon-pencil"></span> Editar
 								</button>
 	
 								
 							</div>
-							<form role="form">
+							<form id="form" role="form">
 								<div class="form-group">
 								
 								
 									<div class="category">
+									
+									<div id="dialog-pwd" class="alert alert-dismissible"  hidden>
+											<button type="button" class="close close-pwd" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+												<div id="registerCard">
+													<div id="form-reg">
+														<div>
+															<form id="form2-card">
+																Contraseña actual
+																<input class="fieldPwd" name="actualPwd" type="text" id="actualPwd"><br><br>
+																Nueva contraseña
+																<input class="fieldPwd" name="newPwd" type="text" id="newPwd"><br><br>
+																Repetir Contraseña
+																<input class="fieldPwd" name="confirmPwd" type="text" id="confirmPwd"><br><br>
+															</form>
+														</div>
+													</div>
+												</div>
+												<div class="row">
+														<button id="changePwd" type="button" class="btn btn-default btn-info action-button">
+															<span class="glyphicon glyphicon-ok"></span> Cambiar contraseña
+														</button>
+												</div>
+										</div>
+									
+									
 										<label >Nombre
-											<input name="name" class="form-control" id="name" placeholder="Juan Carlos Robles" disabled>								
+											<input name="name" class="form-control" id="name" disabled>
+											<input name="lastname" class="form-control" id="lastname" disabled>											
 										</label>
 										
-										<button id="pwd-btn" class="btn btn-default action-button">Cambiar contraseña</button>
+										<button id="pwd-btn" type="button" class="btn btn-default btn-warning action-button">Cambiar contraseña</button>								
 										
 									</div>
 									
 									<div class="category">
 										<label >E-mail
-										<input name="email" class="form-control" id="email" placeholder="carlitos@losarboles.com" disabled>
+											<input name="email" class="form-control" id="email"  disabled>
 										</label>
 	
 									</div>
 									
 									<div class="category">
 										<label >Fecha de nacimiento
-										<input name="birth-date" class="form-control" id="birth-date" placeholder="01/01/1990" disabled>
+										<input name="bday" class="form-control" id="bday" disabled>
 										</label>
-										
-										<button id="save-btn" type="button" class="btn btn-success apply" onclick="save_edit()">
+									
+									</div>
+									
+  
+									<div class="category">
+										<label >Género
+											<input name="gender" class="form-control" id="gender-g" disabled>
+										</label>
+	
+									</div>
+									
+									<div class="category">
+										<label >Documento
+											<input name="identityCard" class="form-control" id="identityCard" disabled>
+										</label>
+									
+										<button id="save-btn" type="button" class="btn btn-success apply" hidden>
 											<span class="glyphicon glyphicon-ok"></span>
 										</button>
-										<button id="cancel-btn" type="button" class="btn btn-danger apply" onclick="cancel_edit()" >
+										<button id="cancel-btn" type="button" class="btn btn-danger apply" hidden >
 											<span class="glyphicon glyphicon-remove"></span>
 										</button>
 									
-									</div>
-									
-                                    <hr>
-                                    
-									<div class="category">
-										<label >Fecha de creación</label>
-										<address id="creation-date" >01/01/1990</address>
-									</div>
-									
-									<div class="category">
-										<label >Último acceso</label>
-										<address id="last-access-date" >01/01/1990</address>
 									</div>
 									
 								</div>
@@ -152,96 +183,109 @@
 									
 				<div  class="col-md-4 center-col">
 					<div class="title"> Direcciones de envío </div>
-					<div class="table-list">
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="images/direccion.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td>
-                                    <strong>Nombre:</strong> ITBA <br>
-                                    <strong>Dirección:</strong> Madero 333, Cap.Fed, Buenos Aires
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/direccion.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td>
-                                    <strong>Nombre:</strong> Casa central <br>
-                                    <strong>Dirección:</strong> Pedro Goyena 1673, Castelar, Buenos Aires
-                                    <hr>
-                                </td>
-                            </tr>                            
+					
+					<div id="dialog" class="alert alert-dismissible"  hidden>
+						<button type="button" class="close close-direction" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+						<div id="register">
+							<div id="form-reg">
+								<div id="form-col1">
+									<form id="form1">
+									<br><br>
+									<p class="field-name">Nombre</p>
+									<p class="field-name">Calle </p>
+									<p class="field-name">Numero </p>
+									<p class="field-name">Provincia </p>
+									<p class="field-name">CP </p>
+									<p class="field-name">Número de telefono</p>
+									</form>
+								</div>
+								<div id="form-col2">
+									<form id="form2">
+									<br><br>
+									<input class="field" type="text" id="aName"> <br><br>
+									<input class="field" type="text" id="aStreet"><br><br>
+									<input class="field" type="text" id="aNumber"><br><br>
+									<select class="field" name="provincia" id="aProvince">
+                                                <option value="none">Seleccionar...</option>
+                                    </select>
+									<br><br>
+									<input class="field" type="text" id="aZipCode"><br><br>
+									<input class="field" type="text" id="aPhoneNumber"> <br><br>
+									</form>
+								</div>
+								<div class="row">
+									<button id="addSubmit" type="button" class="btn btn-default btn-info action-button">
+										<span class="glyphicon glyphicon-plus"></span> Agregar
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					
+	
+                        <table id="direction-table">
+                                                    
                         </table>
-                    </div>
-					<button type="button" class="btn btn-default action-button">
+					<button id="add-direction" type="button" class="btn btn-default btn-info action-button">
 						<span class="glyphicon glyphicon-plus"></span> Agregar dirección de envío
 					</button>	
-						
+					
 			
 				</div>
 				
-				<div  class="col-md-4 right-col">
+				<div  class="col-md-4 right-col" >
 					<div class="title"> Tarjetas de crédito</div>
-					<div class="table-list">		
-                        <table>
-                            <tr>
-                                <td>
-                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td class="card">
-                                    <strong>Nombre:</strong> VISA - HSBC <br>
-                                    <strong>Número:</strong> 8000 **** **** 1764
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td class="card">
-                                    <strong>Nombre:</strong> MasterCard - Galicia <br>
-                                    <strong>Dirección:</strong> 8001 **** **** 2345
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td class="card">
-                                    <strong>Nombre:</strong> Amex - HSBC <br>
-                                    <strong>Dirección:</strong> 8000 **** **** 1145
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td class="card">
-                                    <strong>Nombre:</strong> Amex - HSBC <br>
-                                    <strong>Dirección:</strong> 8000 **** **** 1145
-                                    <hr>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <img src="images/tarjeta.png"  height="50" width="50" alt=""/>
-                                </td>
-                                <td class="card">
-                                    <strong>Nombre:</strong> Amex - HSBC <br>
-                                    <strong>Dirección:</strong> 8000 **** **** 1145
-                                    <hr>
-                                </td>
-                            </tr>
+							
+                        <div id="dialogCard" class="alert alert-dismissible"  hidden>
+						<button type="button" class="close close-card" ><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+
+							<div id="registerCard">
+								<div id="form-reg">
+									<div id="form-col1">
+										<form id="form1-card">
+										<br><br>
+										<p class="field-name">Marca</p>
+										<p class="field-name">Número </p>
+										<p class="field-name">Fecha de vencimiento </p>
+										<p class="field-name">Código de Seguridad </p>
+										</form>
+									</div>
+									<div id="form-col2">
+										<form id="form2-card">
+										<br><br>
+										<select class="fieldCard" id="cBrand"> 
+											<option value="none">Seleccionar...</option>
+											<option value="Amex">American Express</option>
+											<option value="Dinners">Dinners</option>
+											<option value="Master">MasterCard</option>
+											<option value="VISA">Visa</option>
+										</select>
+										<br><br>
+										
+										<input class="fieldCard" name="number" type="text" id="cNumber"><br><br>
+										<input class="fieldCard" name="expirationDate" type="text" id="cExpDate"><br><br>
+										<input class="fieldCard" name="securityCode" type="text" id="cSecCode"><br><br>
+										
+										</form>
+									</div>
+								</div>
+							</div>
+							<div class="row">
+									<button id="addSubmitCard" type="button" class="btn btn-default btn-info action-button">
+										<span class="glyphicon glyphicon-plus"></span> Agregar
+									</button>
+							</div>
+						</div>						
+						<table id="card-table">
+                            
                         </table>
-                    </div>		
-					<button type="button" class="btn btn-default action-button">
+                    <button id="add-card" type="button" class="btn btn-default btn-info action-button">
 						<span class="glyphicon glyphicon-plus"></span> Agregar tarjeta de crédito
 					</button>
+					
+						
+					
 							
 				</div>
 				
@@ -256,7 +300,6 @@
             <footer class="row">
                 <div id="tools" class="col-md-2"> 
                     <a href="contact.html" >Contacto</a>
-                    <br /><a href="under_construction.html">Política de privacidad</a>
                 </div>
                 <div id="suscribe" class="col-md-10">
                     <div id="suscribe_text" class="row">

@@ -23,11 +23,20 @@
 	border-radius: 0px;
 }
 
-#kids_button{
+#boys_button{
+	border-radius: 0px;
+}
+
+#girls_button{
 	border-radius: 0px;
 	border-bottom-right-radius: 5px;
 	border-top-right-radius: 5px;
 }
+
+.carrousel_button{
+	color: #000000;
+}
+
 
 /* -------------- SLIDERS -------------- */
 
@@ -37,4 +46,14 @@
 	margin-bottom: 50px;
 	height: 350px;
 	width: 500px;
+}
+
+/* -------------- OTHERS -------------- */
+
+.title{
+	font-size: 40px;
+	color: #20B4DA;
+	text-align: center;
+	margin-top: 40px;
+	font-style: italic;
 }
