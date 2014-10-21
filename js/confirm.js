@@ -192,17 +192,6 @@ function confirmOrder() {
 		}
 	}
 	
-	var getOrderAjax = {
-		url: 'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetOrderById&username='+
-				localStorage.username +'&authentication_token='+ localStorage.token +'&id='+ localStorage.orderId,
-			dataType: 'jsonp',
-			timeout: 3000
-	}
-	
-	$.ajax(getOrderAjax).done( function(resp) {
-			console.log(resp);
-	});
-	
 	JSONstring = '{"id":'+localStorage.orderId+',"address":{"id":'+localStorage.addressId+'}';
 	var method = getUrlParameter('method');
 	if( method != "cash" ) {
@@ -226,7 +215,7 @@ function confirmOrder() {
 	$.ajax(confirmAjax).done( function(resp) {
 		if(resp.hasOwnProperty('error')){
 		console.log(resp.error.code);
-		var message;
+		var message = "";
 		switch(resp.error.code) {
 			case 101:
 				message = "La orden ya fue confirmada, o no contiene ningún producto.";
@@ -238,10 +227,27 @@ function confirmOrder() {
 				break;
 			case 999:
 			default:
-				message = "Se produjo un error inesperado procesando la solicitud. Verifique que tiene al menos un producto en el carrito de compras.";
+				var getOrderAjax = {
+					url: 'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetOrderById&username='+
+						localStorage.username +'&authentication_token='+ localStorage.token +'&id='+ localStorage.orderId,
+					dataType: 'jsonp',
+					timeout: 3000
+				}
+	
+				$.ajax(getOrderAjax).done( function(resp) {
+					if(resp.order.status > 1 ) {
+						message="La orden ya fue confirmada.";
+					} else if( resp.order.items === "undefined" || resp.order.items.length == 0 ) {
+						message="El carrito de compras no tiene productos.";
+					} else {
+						message="Se produjo un error al confirmar la compra.";
+					}
+					errorAction(message);
+				});
 				break;
 		}
-		errorAction(message);
+		if( message != "" )
+			errorAction(message);
 	} else {
 			successAction("La compra se realizó correctamente.");
 			setTimeout(function(){window.location.replace("gestion_pedidos.html?result=success")}, 4000);
