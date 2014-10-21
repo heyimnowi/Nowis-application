@@ -39,7 +39,7 @@ function register(){
       var regisAjax = {
          url: 'http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=CreateAccount&account='+JSON.stringify(account),
          dataType: 'jsonp',
-         timeout: 1,
+         timeout: 6000,
 		 error: function(x, t, m) {
         	if(t==="timeout") {
             	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
