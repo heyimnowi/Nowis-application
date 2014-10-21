@@ -9,18 +9,16 @@
         <link rel="shortcut icon" href="images/fav.ico" />
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/bootstrap.js"></script>
-        <script src="js/javascript.js"></script>
     </head>
 
     <body>
     	<div id="container" class="container">
-
-       <header class="row">
-                <div class="col-md-2">               	
+<header class="row">
+                <div class="col-md-2">                  
                     <a href="index.html">
                     <div id="sitename" class="row">Nowi's</div>
                     </a>
-				
+                
                     <div id="gender" class="row"></div>                  
                 </div>
                 
@@ -32,9 +30,9 @@
                             <input type="text" id="searchbar" class="form-control" placeholder="Buscar producto..." name="product">
                         </div>
                         <button id="search-btn" type="submit" class="btn btn-default">Buscar</button>
-                    	<br>
+                        <br>
                         <div id="search-genders">
-                        	<div class="input-div"><input type="radio" name="gender" value="Masculino"> Hombre</input></div>
+                            <div class="input-div"><input type="radio" name="gender" value="Masculino"> Hombre</input></div>
                             <div class="input-div"><input type="radio" name="gender" value="Femenino"> Mujer</input></div>
                             <div class="input-div"><input type="radio" name="gender" value="Ninios"> Niños</input></div>
                             <div class="input-div"><input type="radio" name="gender" value="Ninias"> Niñas</input></div>
@@ -48,23 +46,27 @@
                 <div id="icons" class="col-md-3">
                     <div class="row">
                     
+                        <a href="wish_list.html">
                         <div class="col-md-3" id="wishlist-btn">
                             <div class="row">
-                            	<span id="wish-list-image" class="glyphicon glyphicon-heart"></span>
+                                <span id="wish-list-image" class="glyphicon glyphicon-heart"></span>
                             </div>
                             <div class="row icontext">Lista de deseos</div>
                         </div>
+                        </a>    
                         
+                        <a href="cart.html">
                         <div class="col-md-3" id="cart-btn">
                             <div class="row">
-                            	<span id="cart-image" class="glyphicon glyphicon-shopping-cart"></span>
-                            	<span class="badge">0</span>
+                                <span id="cart-image" class="glyphicon glyphicon-shopping-cart"></span>
+                                <span class="badge">0</span>
                             </div>
                             <div class="row icontext">Carrito de compras</div>
                         </div>
+                    </a>
                         
                         <div class="col-md-3" id="user-btn">
-							 <div class="dropdown">
+                             <div class="dropdown">
                                 <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown">
                                     <span class="glyphicon glyphicon-user"></span>
                                 </button>
@@ -72,11 +74,11 @@
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="account.html">Mi cuenta</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="under_construction.html">Pedidos</a></li>
                                     <li role="presentation"><a role="menuitem" tabindex="-1" href="index.html?logout=yes">Salir</a></li>
-				   				</ul>
-			    			</div>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-	            </div>     
+                </div>     
            </header>
             
             <!-- ACÁ EMPIEZA EL CONTENIDO -->
@@ -114,17 +116,6 @@
 
 
                 </div>
-
-
-                <div class="row"> 
-                    <div class="col-md-1"></div> 
-                    <div class="col-md-5 title">Nuevo
-                    </div> 
-                    <div class="col-md-5 title">Promociones
-                    </div>    
-                    <div class="col-md-1"></div>
-                </div>   
-
 
                 <div class="row"> 
                 
@@ -169,11 +160,11 @@
                   			</div>
 
                             <!-- Controls -->
-                            <a class="left carousel-control" href="#slider-new" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left carrousel_button"></span>
+                            <a class="left carousel-control " href="#slider-new" role="button" data-slide="prev">
+                                <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
                             <a class="right carousel-control" href="#slider-new" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right carrousel_button"></span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                 		</div>            
 					</div>
@@ -205,10 +196,10 @@
 
                             <!-- Controls -->
                             <a class="left carousel-control" href="#slider-promotions" role="button" data-slide="prev">
-                                <span class="glyphicon glyphicon-chevron-left carrousel_button"></span>
+                                <span class="glyphicon glyphicon-chevron-left"></span>
                             </a>
                             <a class="right carousel-control" href="#slider-promotions" role="button" data-slide="next">
-                                <span class="glyphicon glyphicon-chevron-right carrousel_button"></span>
+                                <span class="glyphicon glyphicon-chevron-right"></span>
                             </a>
                         </div>  
                     </div>
@@ -227,11 +218,11 @@
                         ¡Suscribite a nuestras promociones!
                     </div>
                     <div class="row">
-                        <form class="navbar-form navbar-left v" role="search">
+                        <form class="navbar-form navbar-left" role="search" action="under_construction.html">
                             <div class="form-group">
                                 <input type="text" id="suscribebar" class="form-control" placeholder="Ingresa tu e-mail..." name="suscribe">
                             </div>
-                            <div id="suscribe-btn" class="btn btn-default">Enviar</div>
+                            <button type="submit" class="btn btn-default">Enviar</button>
                         </form>
                     </div>
                </div>   

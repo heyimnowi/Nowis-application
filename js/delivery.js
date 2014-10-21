@@ -19,34 +19,12 @@ function addExistingAddresses() {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=GetAllAddresses&username='+
 			localStorage.username +'&authentication_token='+ localStorage.token,
         dataType: 'jsonp',
-        timeout: 3000,
-		error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Hubo un error al cargar las direcciones de envío ya existentes. Vuelva a cargar la página.");
-        	}
-    	}
+        timeout: 3000
 	};
 		
 	$.ajax(addressesAjax).done(function( resp ){
-		if(resp.hasOwnProperty('error')){
-			console.log(resp.error.code);
-			var message;
-			switch(resp.error.code) {
-				case 101:
-				case 102:
-				case 2:
-				case 4:
-					message = "Ya no te encuentras conectado. Accede a tu cuenta nuevamente.";
-					break;
-				case 999:
-				default:
-					message = "Se produjo un error inesperado procesando la solicitud.";
-					break;
-			}
-			errorAction(message);
-		} else {
-        	$.each(resp.addresses, appendAddress);
-		}
+		
+        $.each(resp.addresses, appendAddress);
     });
 }
 
@@ -62,29 +40,12 @@ function addProvinces() {
 	var provincesAjax =  {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Common.groovy?method=GetAllStates',
         dataType: 'jsonp',
-        timeout: 3000,
-		error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Hubo un problema de conexión. Vuelva a cargar la página.");
-        	}
-    	}
+        timeout: 3000
 	};
 	
 	$.ajax(provincesAjax).done(function( resp ){
-		if(resp.hasOwnProperty('error')){
-			console.log(resp.error.code);
-			var message;
-			switch(resp.error.code) {
-				case 999:
-				default:
-					message = "Se produjo un error inesperado procesando la solicitud.";
-					break;
-			}
-			errorAction(message);
-		} else {
 			
         $.each(resp.states, appendProvince);
-		}
     });	
 }
 
@@ -101,12 +62,7 @@ function showCartItems() {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetAllOrders&username='+
 			localStorage.username +'&authentication_token='+ localStorage.token,
         dataType: 'jsonp',
-        timeout: 3000,
-		error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Hubo un error al cargar los productos del carrito de compras. Vuelva a cargar la página.");
-        	}
-    	}
+        timeout: 3000
 	};
 		
 	$.ajax(ordersAjax).done(function( resp ){
@@ -123,12 +79,7 @@ function appendOrderItems(index, order){
 			url:'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=GetOrderById&username='+
 				localStorage.username +'&authentication_token='+ localStorage.token +'&id='+ order.id,
 			dataType: 'jsonp',
-			timeout: 3000,
-			error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
-        	}
-    	}
+			timeout: 3000
 		};
 				
 		$.ajax(singleOrderAjax).done(function( resp ){
@@ -187,12 +138,7 @@ function createAddress() {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Account.groovy?method=CreateAddress&username='+
 			localStorage.username +'&authentication_token='+ localStorage.token+'&address='+JSON.stringify(address),
         dataType: 'jsonp',
-        timeout: 3000,
-		error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
-        	}
-    	}
+        timeout: 3000
 	};
 		
 	$.ajax(addressAjax).done( function(resp) {
@@ -475,12 +421,7 @@ function addAddressToOrderById(addressId, newAddr) {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=ChangeOrderAddress&username='+
 			localStorage.username +'&authentication_token='+ localStorage.token+'&order='+URLstring,
         dataType: 'jsonp',
-        timeout: 3000,
-		error: function(x, t, m) {
-        	if(t==="timeout") {
-            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
-        	}
-    	}
+        timeout: 3000
 	};
 	
 	$.ajax(orderAjax).done( function(resp) {
