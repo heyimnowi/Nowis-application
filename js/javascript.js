@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 $(document).ready(function() {
 
 	$("#wishlist-btn").click(wishlistButton);
@@ -169,7 +169,7 @@ function getUrlParameter(name) {
 }
 
 
-=======
+
 $(document).ready(function() {
 
 	$("#wishlist-btn").click(wishlistButton);
@@ -347,4 +347,3 @@ function getUrlParameter(name) {
 }
 
 
->>>>>>> d33678a532ca416e1349c39dc00ea8c8a52d2dcc
