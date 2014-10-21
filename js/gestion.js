@@ -1,4 +1,5 @@
 // JavaScript Document
+	var flag = false;
 $(document).ready(function(){
 	
 	var allOrdersAjax = {
@@ -11,6 +12,14 @@ $(document).ready(function(){
 	$.ajax(allOrdersAjax).done(function( resp ){
 			
         $.each(resp.orders, confirmedOrders);
+		if( !flag ) {
+			$("#orders-table").append(
+			'<tr>'+
+				'<td>'+
+					'No se ha realizado ningún pedido.'+
+				'</td>'+
+			'</tr>'	
+			)}
     });
 });
 
@@ -18,7 +27,7 @@ function confirmedOrders(index, order) {
 	if( order.status > 1 ) {
 		
 		
-		
+		flag = true;
 		$("#orders-table").append(
 			'<tr>'+
 				'<td class="image">'+
