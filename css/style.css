@@ -211,10 +211,6 @@ content {
 	padding: 12px 0px 0px 80px;
 }
 
-#icons a:link, a:active, a:visited {
-	color: #000;		
-}
-
 #logo a:link, a:active, a:visited {
 	color: rgba(22,126,238,1);		
 	text-decoration: none;		
@@ -229,6 +225,16 @@ content {
 	color: #CCC;
 }
 
+#wishlist-btn .icontext a:hover,
+#wishlist-btn .icontext a:link,
+#wishlist-btn .icontext a:visited,
+#wishlist-btn .icontext a:active {
+	color: #FFF;	
+}
+
+.icontext:hover, .icontext:active, .icontext:link, .icontext:visited {
+	color: #FFF;	
+}
 
 .icontext {
 	padding-top: 7px;
