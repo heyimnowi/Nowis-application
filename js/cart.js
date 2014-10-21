@@ -34,7 +34,7 @@ $('document').ready(function(){
                     '<td class="price">$ '+ (item.price).toFixed(2) +'</td>'+
                     '<td class="totalPrice">$ '+ (item.price * item.quantity).toFixed(2) +'</td>'+
                     '<td class="remove">'+
-                    '<div id="moveToCart-'+ trId +'" class="btn btn-default btn-lg btn-warning table-button">'+
+                    '<div id="moveToWishlist-'+ trId +'" class="btn btn-default btn-lg btn-warning table-button">'+
                         '<span class="glyphicon glyphicon-heart"></span> Mover a la lista de deseos'+
                     '</div>' +
                     '<br><br>' +
@@ -97,7 +97,7 @@ $('document').ready(function(){
 
                 wishListItem = {
                         id: prodId,
-                        quantity: parseInt($('#quantity').val()),
+                        quantity: 1,
                 };
                 if (localStorage.wishList === undefined) {
                     localStorage.wishList = JSON.stringify([wishListItem]);
