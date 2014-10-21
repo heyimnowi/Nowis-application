@@ -3,6 +3,7 @@
 $(document).ready(function(){
     
     var gender = getUrlParameterByName('gender');
+    var name = getUrlParameterByName('name');
     var subcatid = getUrlParameterByName('subcatid');
     var filterId = getUrlParameterByName('filterId');
     var filterName = getUrlParameterByName('filterName');
@@ -288,7 +289,7 @@ $(document).ready(function(){
     
     var whileAjax = function(currPage){
         $.ajax({
-            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page='+ currPage +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
+            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page='+ currPage +'&page_size=15&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
             dataType: 'jsonp',
             timeout: 3000
         }).done(function ( resp ){
@@ -303,7 +304,7 @@ $(document).ready(function(){
     }
     var whileSubcatAjax = function(currPage){
         $.ajax({
-                url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsBySubcategoryId&id='+ subcatid +'&page='+ currPage +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
+                url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsBySubcategoryId&id='+ subcatid +'&page_size=15&page='+ currPage +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
                 dataType: 'jsonp',
                 timeout: 3000
             }).done(function ( resp ){
@@ -318,12 +319,20 @@ $(document).ready(function(){
     }
 
     
-    /*--- Random products Loading ---*/
+    /*--- Products Loading ---*/
 	
     if (filterId !== undefined) {
 		
         $.ajax({
-            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "Adulto"},{"id": '+ filterId +',"value": "'+ filterName +'"}]',
+            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page_size=15&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "Adulto"},{"id": '+ filterId +',"value": "'+ filterName +'"}]',
+            dataType: 'jsonp',
+            timeout: 3000
+        }).done(function ( resp ){
+            appendProducts(resp.products);
+        });
+    }else if (name !== undefined) {
+         $.ajax({
+            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsByName&name='+ name +'&page_size=15&page='+ page +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
             dataType: 'jsonp',
             timeout: 3000
         }).done(function ( resp ){
@@ -331,7 +340,7 @@ $(document).ready(function(){
         });
     }else if (subcatid === undefined) {
         $.ajax({
-            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page='+ page +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
+            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetAllProducts&page='+ page +'&page_size=15&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
             dataType: 'jsonp',
             timeout: 3000
         }).done(function ( resp ){
@@ -340,7 +349,7 @@ $(document).ready(function(){
         });
     }else{
         $.ajax({
-            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsBySubcategoryId&id='+ subcatid +'&page='+ page +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
+            url:'http://eiffel.itba.edu.ar/hci/service3/Catalog.groovy?method=GetProductsBySubcategoryId&id='+ subcatid +'&page_size=15&page='+ page +'&filters=[{"id":1, "value": "'+ gender +'"},{"id": 2,"value": "'+ edad +'"}]',
             dataType: 'jsonp',
             timeout: 3000
         }).done(function ( resp ){
