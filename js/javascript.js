@@ -28,6 +28,13 @@ $(document).ready(function() {
 	
 	$("#gender").append(genderTitle);
 	
+	$('#search-btn').click(function(event){		
+		event.preventDefault();
+		var query = $('#searchbar').val();
+		var gender = $('#search-genders input:checked').val();		
+		window.location.replace('search.html?gender='+ gender +'&page=1&name='+ query);
+	});
+	
 });
 
 function wishlistButton() {

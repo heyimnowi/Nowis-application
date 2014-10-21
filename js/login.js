@@ -42,7 +42,7 @@ function register(){
          timeout: 1,
 		 error: function(x, t, m) {
         	if(t==="timeout") {
-            	errorAction("Se agotó el tiempo para realizar la acción solicitada. Vuelva a intentar más tarde.");
+            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
         	}
     	}
       }; 
@@ -117,7 +117,7 @@ function login(special){
          timeout: 6000,
 		 error: function(x, t, m) {
         	if(t==="timeout") {
-            	errorAction("Se agotó el tiempo para realizar la acción solicitada. Vuelva a intentar más tarde.");
+            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
         	}
     	}
       }; 
