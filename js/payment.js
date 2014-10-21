@@ -165,7 +165,8 @@ function validateNumber() {
 	var name = $( "input[name='numero']" ).val();
 	var parent = $( "input[name='numero']" ).parent();
 	parent.find('.field-error').remove();
-	var type = $('input[name=metodo-pago]:checked', '#payment-method-form').attr('id');
+	var type = $('input[name=metodo-pago]:checked').attr('id');
+	console.log(type);
 
 	if( name.length != 0 ) {
 		if( type == "american" && name.match(/^((34)|(37))[0-9]{13}$/g) == null ) {

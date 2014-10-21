@@ -200,7 +200,6 @@ function confirmOrder() {
 	}
 	
 	$.ajax(getOrderAjax).done( function(resp) {
-
 			console.log(resp);
 	});
 	
@@ -216,14 +215,37 @@ function confirmOrder() {
 		url: 'http://eiffel.itba.edu.ar/hci/service3/Order.groovy?method=ConfirmOrder&username='+
 				localStorage.username +'&authentication_token='+ localStorage.token +'&order='+ URLstring,
 			dataType: 'jsonp',
-			timeout: 3000
+			 timeout: 6000,
+		 	error: function(x, t, m) {
+        	if(t==="timeout") {
+            	errorAction("Se agotó el tiempo para realizar la acción solicitada.");
+        	}
+    	}
 	}
 	
 	$.ajax(confirmAjax).done( function(resp) {
-
-			console.log(resp);
+		if(resp.hasOwnProperty('error')){
+		console.log(resp.error.code);
+		var message;
+		switch(resp.error.code) {
+			case 101:
+				message = "La orden ya fue confirmada, o no contiene ningún producto.";
+			case 104:
+				message = "El nombre de usuario es inválido.";
+				break;
+			case 105:
+				message = "La contraseña del usuario es inválida.";
+				break;
+			case 999:
+			default:
+				message = "Se produjo un error inesperado procesando la solicitud. Verifique que tiene al menos un producto en el carrito de compras.";
+				break;
+		}
+		errorAction(message);
+	} else {
 			successAction("La compra se realizó correctamente.");
-			//window.location.replace("gestion_pedidos.html?result=success");
+			setTimeout(function(){window.location.replace("gestion_pedidos.html?result=success")}, 4000);
+	}
 	});
 }
 
