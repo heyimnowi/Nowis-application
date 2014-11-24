@@ -1,0 +1,22 @@
+<resources>
+   <string-array name="frequency_titles">
+       <item>Nunca</item>
+       <item>1 minuto</item>
+       <item>10 minutos</item>
+       <item>30 minutos</item>
+       <item>1 hora</item>
+   </string-array>
+   <string-array name="frequency_values">
+       <item>0</item>
+       <item>1</item>
+       <item>10</item>
+       <item>30</item>
+       <item>60</item>
+   </string-array>
+   <string-array name="order_states">
+       <item>creado</item>
+       <item>confirmado</item>
+       <item>despachado</item>
+       <item>entregado</item>
+   </string-array>
+</resources>

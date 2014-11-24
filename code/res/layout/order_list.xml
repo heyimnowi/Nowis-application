@@ -1,0 +1,97 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal" >
+        
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="70dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:text="@string/order_text" />
+         <TextView
+            android:id="@+id/order_id2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="2dp"
+            android:ellipsize="end"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/order_id"/>
+        <TextView
+            android:id="@+id/order_sent_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="70dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:text="@string/order_sent_to_text"
+        	android:layout_below="@id/order_id" />
+        <TextView
+            android:id="@+id/order_sent_to2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/order_sent_to"
+        	android:layout_below="@id/order_id" />
+        <TextView
+            android:id="@+id/order_date_received"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="70dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:text="@string/order_date_received_text"
+        	android:layout_below="@id/order_sent_to" />
+        <TextView
+            android:id="@+id/order_date_received2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/order_date_received"
+        	android:layout_below="@id/order_sent_to" />
+        <TextView
+            android:id="@+id/order_date_delivery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="70dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:text="@string/order_date_delivery_text"
+        	android:layout_below="@id/order_date_received" />
+        <TextView
+            android:id="@+id/order_date_delivery2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:includeFontPadding="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:textSize="13sp"
+            android:layout_toRightOf="@+id/order_date_delivery"
+        	android:layout_below="@id/order_date_received" />
+
+        <ImageView
+            android:id="@+id/order_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="10dp"
+        	android:layout_below="@id/order_id" />
+
+</RelativeLayout>
